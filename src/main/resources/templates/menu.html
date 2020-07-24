@@ -4,9 +4,15 @@
     <meta charset="UTF-8" />
     <title>Spa Menu</title>
     <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+    </style>
 </head>
 <body>
-<h1>My Super Fancy Spa</h1>
+<h1>eucalyptus spa</h1>
 <div id = "clientProfile">
     <h2>My Profile</h2>
     <p th:text="${name}"></p>
@@ -14,32 +20,42 @@
     <p th:text="${manipedi}"></p>
 </div>
 <div id = "servicesMenu">
-    <h1>Menu of Available Services</h1>
-    <h2>Facial Treatments</h2>
-    <p>The facial treatments below are recommended by our  estheticians for your given skin type </p>
+    <h1>menu of services</h1>
+    <h2>Skin Treatments</h2>
+    <p>The facial treatments below are recommended <br> by our estheticians for your given skin type </p>
     <th:block th:each="aFacial : ${appropriateFacials}">
         <tr th:text="${aFacial}"></tr>
         <br>
     </th:block>
 
+    <div th:if="${manipedi} == 'Pedicure'">
+        <h2>Pedicure</h2>
+        <p th:replace="fragments :: pedicureDescription"></p>
+    </div>
 
-    <div th:if="${manipedi} == 'manicure'">
-        <h3>Manicure</h3>
+    <div th:if="${manipedi} == 'Manicure'">
+        <h2>Manicure</h2>
         <p th:replace="fragments :: manicureDescription"></p>
     </div>
-    <div th:if="${manipedi} == 'pedicure'">
-        <h3>Pedicure</h3>
+
+    <div th:if="${manipedi} == 'Both'">
+        <h2>Manicure</h2>
+        <p th:replace="fragments :: manicureDescription"></p>
+        <h2>Pedicure</h2>
         <p th:replace="fragments :: pedicureDescription"></p>
     </div>
-    <div th:if="${manipedi} == 'both'">
-        <h3>Pedicure</h3>
-        <p th:replace="fragments :: pedicureDescription"></p>
-        <h3>Manicure</h3>
-        <p th:replace="fragments :: pedicureDescription"></p>
-    </div>
-    <div class="foo blue"></div>
-    <div class="foo purple"></div>
-    <div class="foo wine"></div>
+    <h3>Nail Colors</h3>
+    <div class="left blue"></div>
+
+    <div class="middle purple"></div>
+
+    <div class="middle wine"></div>
+
+    <div class="middle gray"></div>
+    <br>
+    <br>
+    <br>
+
 </div>
 </body>
 </html>

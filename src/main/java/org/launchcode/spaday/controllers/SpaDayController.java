@@ -11,27 +11,27 @@ import java.util.ArrayList;
 public class SpaDayController {
 
     public boolean checkSkinType(String skinType, String facialType) {
-        if (skinType.equals("oily")) {
-            if (facialType.equals("Microdermabrasion") || facialType.equals("Rejuvenating")) {
+        if (skinType.equals("Oily")) {
+            if (facialType.equals("Dead Sea Salt Microdermabrasion") || facialType.equals("Volcanic Clay Mud Rejuvination")) {
                 return true;
             }
             else {
                 return false;
             }
         }
-        else if (skinType.equals("combination")) {
-            if (facialType.equals("Microdermabrasion") || facialType.equals("Rejuvenating") || facialType.equals("Enzyme Peel")) {
+        else if (skinType.equals("Combination")) {
+            if (facialType.equals("Dead Sea Salt Microdermabrasion") || facialType.equals("Volcanic Clay Mud Rejuvination") || facialType.equals("Summer Citrus Enzyme Exfoliation")) {
                 return true;
             }
             else {
                 return false;
             }
         }
-        else if (skinType.equals("normal")) {
+        else if (skinType.equals("Normal")) {
             return true;
         }
-        else if (skinType.equals("dry")) {
-            if (facialType.equals("Rejuvenating") || facialType.equals("Hydrofacial")) {
+        else if (skinType.equals("Dry")) {
+            if (facialType.equals("Volcanic Clay Mud Rejuvination") || facialType.equals("Manuka Honey Hydrofacial")) {
                 return true;
             }
             else {
@@ -51,16 +51,16 @@ public class SpaDayController {
                 "<input type = 'text' name = 'name'>" +
                 "<br>Skin type: <br>" +
                 "<select name = 'skintype'>" +
-                "<option value = 'oily'>Oily</option>" +
-                "<option value = 'combination'>Combination</option>" +
-                "<option value = 'normal'>Normal</option>" +
-                "<option value = 'dry'>Dry</option>" +
+                "<option value = 'Oily'>Oily</option>" +
+                "<option value = 'Combination'>Combination</option>" +
+                "<option value = 'Normal'>Normal</option>" +
+                "<option value = 'Dry'>Dry</option>" +
                 "</select><br>" +
                 "Manicure or Pedicure? <br>" +
                 "<select name = 'manipedi'>" +
-                "<option value = 'manicure'>Manicure</option>" +
-                "<option value = 'pedicure'>Pedicure</option>" +
-                "<option value = 'both'>Both</option>" +
+                "<option value = 'Manicure'>Manicure</option>" +
+                "<option value = 'Pedicure'>Pedicure</option>" +
+                "<option value = 'Both'>Both</option>" +
                 "</select><br>" +
                 "<input type = 'submit' value = 'Submit'>" +
                 "</form>";
@@ -75,10 +75,10 @@ public class SpaDayController {
         model.addAttribute("manipedi",manipedi);
 
         ArrayList<String> facials = new ArrayList<String>();
-        facials.add("Microdermabrasion");
-        facials.add("Hydrofacial");
-        facials.add("Rejuvenating");
-        facials.add("Enzyme Peel");
+        facials.add("Dead Sea Salt Microdermabrasion");
+        facials.add("Manuka Honey Hydrofacial");
+        facials.add("Volcanic Clay Mud Rejuvination");
+        facials.add("Summer Citrus Enzyme Exfoliation");
 
         ArrayList<String> appropriateFacials = new ArrayList<String>();
         for (int i = 0; i < facials.size(); i ++) {

@@ -1,5 +1,5 @@
 body {
-    background-color: pink;
+    background-color: #b3c4b1;
 }
 
 div {
@@ -7,7 +7,9 @@ div {
     width: 50%;
     padding: 10px;
     text-align: center;
-    background-color: white;
+    background-color: #555a54;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
@@ -15,7 +17,10 @@ h1 {
         width: 50%;
         padding: 10px;
         text-align: center;
-        background-color: white;
+        background-color: #555a54;
+        color: white;
+        font-family: 'Major Mono Display', monospace;
+
 }
 
 table {
@@ -25,22 +30,48 @@ table {
             text-align: center;
 }
 
-.foo {
+.left {
   float: left;
-  width: 20px;
+  width: 25px;
   height: 20px;
-  margin: 5px;
+  margin-left: 325px;
   border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 50%;
+}
+
+.middle {
+  float: left;
+  width: 25px;
+  height: 20px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 50%;
+}
+
+.right {
+  float: right;
+  width: 25px;
+  margin-right: 100px;
+  height: 20px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 50%;
 }
 
 .blue {
-  background: #13b4ff;
+  background: #c7a5a2;
 }
 
 .purple {
-  background: #ab3fdd;
+  background: #daaf6e;
 }
 
 .wine {
-  background: #ae163e;
+  background: #d1e1f5;
+}
+
+.gray {
+background: #494545;
+}
+
+#clientProfile {
+
 }
